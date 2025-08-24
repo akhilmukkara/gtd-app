@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Things Done App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col items-center p-4">
+  <div class="w-full max-w-2xl">
+    <h1 class="text-4xl text-center mb-6">Get Things Done</h1>
+
+    <!-- Task Capture -->
+    <div class="mb-6">
+      <input id="taskInput" type="text" placeholder="Capture a task..." class="w-full p-2 bg-gray-800 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-gray-400" />
+      <button id="addTask" class="mt-2 w-full bg-gray-700 hover:bg-gray-600 text-white p-2 rounded">Add Task</button>
+    </div>
+
+    <!-- Timer Controls -->
+    <div class="mb-6 text-center">
+      <h2 id="timerDisplay" class="text-3xl mb-4">25:00</h2>
+      <select id="timerMode" class="p-2 bg-gray-800 text-white border border-gray-600 rounded mb-2">
+        <option value="25-5">25/5 Pomodoro</option>
+        <option value="50-10">50/10 Pomodoro</option>
+      </select>
+      <div>
+        <button id="startTimer" class="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded mr-2">Start</button>
+        <button id="resetTimer" class="bg-gray-700 hover:bg-gray-600 text-white p-2 rounded">Reset</button>
+      </div>
+      <p id="sessionCount" class="mt-2">Sessions Completed: 0</p>
+    </div>
+
+    <!-- Task Lists -->
+    <div class="grid grid-cols-1 gap-4">
+      <div>
+        <h2 class="text-xl mb-2">Next Actions</h2>
+        <ul id="nextActions" class="space-y-2"></ul>
+      </div>
+      <div>
+        <h2 class="text-xl mb-2">Waiting For</h2>
+        <ul id="waitingFor" class="space-y-2"></ul>
+      </div>
+      <div>
+        <h2 class="text-xl mb-2">Someday/Maybe</h2>
+        <ul id="somedayMaybe" class="space-y-2"></ul>
+      </div>
+      <div>
+        <h2 class="text-xl mb-2">Done</h2>
+        <ul id="done" class="space-y-2"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
